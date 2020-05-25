@@ -5,13 +5,29 @@
          version="4.0">
 
     <servlet>
-        <servlet-name>UserSimpleServlet</servlet-name>
+        <servlet-name>mainServlet</servlet-name>
         <servlet-class>servlet.AllUsersServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>UserSimpleServlet</servlet-name>
+        <servlet-name>mainServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>addServlet</servlet-name>
+        <servlet-class>servlet.AddServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
 
+    <servlet>
+        <servlet-name>editServlet</servlet-name>
+        <servlet-class>servlet.EditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>editServlet</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
 </web-app>

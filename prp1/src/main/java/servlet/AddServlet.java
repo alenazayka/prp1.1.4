@@ -2,6 +2,7 @@ package servlet;
 
 import model.User;
 import service.UserService;
+import service.UserServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,7 +19,7 @@ public class AddServlet  extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        userService = UserService.getINSTANCE();
+        userService= UserServiceImpl.getINSTANCE();
     }
 
     @Override
@@ -35,7 +36,6 @@ public class AddServlet  extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         try {
             String name = req.getParameter("name");
-            String surname = req.getParameter("surname");
             int age = Integer.parseInt(req.getParameter("age"));
 
             User user = new User(name, age);

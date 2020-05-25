@@ -1,6 +1,7 @@
 package servlet;
 
 import service.UserService;
+import service.UserServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,12 +13,12 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/delete")
 public class DeleteServlet  extends HttpServlet {
-    private static UserService userService;
+    private UserService userService;
 
     @Override
     public void init() throws ServletException {
         super.init();
-        userService = UserService.getINSTANCE();
+        userService = UserServiceImpl.getINSTANCE();
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

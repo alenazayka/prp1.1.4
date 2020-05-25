@@ -17,6 +17,9 @@ public class User{
     @Column(name = "age")
     private int age;
 
+    @Column(name = "role")
+    private String role;
+
     public User(int id, String name, int age) {
         this.name = name;
         this.age = age;

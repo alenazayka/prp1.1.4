@@ -2,6 +2,8 @@ package servlet;
 
 import model.User;
 import service.UserService;
+import service.UserServiceImpl;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,12 +14,12 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/edit")
 public class EditServlet  extends HttpServlet {
-    private static UserService userService;
+    private UserService userService;
 
     @Override
     public void init() throws ServletException {
         super.init();
-        userService = UserService.getINSTANCE();
+        userService = UserServiceImpl.getINSTANCE();
     }
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

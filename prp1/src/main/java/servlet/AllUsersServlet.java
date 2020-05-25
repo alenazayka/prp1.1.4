@@ -2,6 +2,7 @@ package servlet;
 
 import model.User;
 import service.UserService;
+import service.UserServiceImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -15,12 +16,12 @@ import java.util.List;
 
 @WebServlet(urlPatterns = "/")
 public class AllUsersServlet extends HttpServlet {
-    private static UserService userService;
+    private UserService userService;
 
     @Override
     public void init() throws ServletException {
         super.init();
-        userService = UserService.getINSTANCE();
+        userService = UserServiceImpl.getINSTANCE();
     }
 
     @Override
